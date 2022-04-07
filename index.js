@@ -17,4 +17,8 @@ function kelvinToCelsius(k) {
   return k - 273.15;
 }
 
+function kelvinToFahrenheit(k) {
+  return 1.8 * (k - 273) + 32;
+}
+
 getWeatherData('san diego');
