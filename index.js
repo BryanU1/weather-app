@@ -7,7 +7,11 @@ async function getWeatherData(city) {
     const response = await fetch(weatherURL, {mode: 'cors'});
     const weatherData = await response.json();
     console.log(weatherData);
-    return weatherData;
+    const temp = weatherData.main.temp;
+    console.log(temp);
+    const description = weatherData.weather[0].description;
+    console.log(description);
+    return {temp,};
   } catch (error) {
     console.error(error);
   }
@@ -21,4 +25,4 @@ function kelvinToFahrenheit(k) {
   return 1.8 * (k - 273) + 32;
 }
 
-getWeatherData('san diego');
+const weatherData = getWeatherData('san diego');
